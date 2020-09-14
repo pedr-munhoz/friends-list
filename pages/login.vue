@@ -1,0 +1,29 @@
+<template>
+  <v-layout class="mt-5">
+    <v-flex>
+      <v-container>
+        <v-row>
+          <v-col cols="0" md="2" />
+          <v-col cols="12" md="8">
+            <v-card class="mx-auto" max-height="500" max-width="500">
+              <v-card-title class="headline">Login</v-card-title>
+              <v-card-subtitle>
+                Welcome! Please enter your email and password.
+              </v-card-subtitle>
+              <v-card-text>
+                <v-text-field label="Email" />
+                <v-text-field type="password" label="Password" />
+              </v-card-text>
+              <v-card-actions>
+                <v-spacer />
+                <v-btn>Sign in</v-btn>
+                <v-spacer />
+              </v-card-actions>
+            </v-card>
+          </v-col>
+          <v-col cols="0" md="2" />
+        </v-row>
+      </v-container>
+    </v-flex>
+  </v-layout>
+</template>
