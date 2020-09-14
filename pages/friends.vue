@@ -5,7 +5,7 @@
         <v-row>
           <v-col cols="0" md="2" />
           <v-col cols="12" md="8">
-            <people-list headline="Friends" />
+            <people-list headline="Friends" :items="friends" />
           </v-col>
           <v-col cols="0" md="2" />
         </v-row>
@@ -20,6 +20,12 @@ import PeopleList from '~/components/PeopleList.vue'
 export default {
   components: {
     PeopleList,
+  },
+  data: () => ({}),
+  computed: {
+    friends() {
+      return this.$store.getters['friends/get']
+    },
   },
 }
 </script>

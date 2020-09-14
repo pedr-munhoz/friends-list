@@ -15,14 +15,17 @@ export default {
       required: true,
       default: 'People',
     },
+    items: {
+      type: Array,
+      required: true,
+    },
   },
   data: () => ({
     headers: [
-      { text: 'Name', value: '' },
-      { text: 'Phone', value: '' },
-      { text: 'Reference', value: '' },
+      { text: 'Name', value: 'name' },
+      { text: 'Phone', value: 'phone' },
+      { text: 'Reference', value: 'reference' },
     ],
-    items: [],
   }),
 }
 </script>
