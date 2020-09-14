@@ -85,6 +85,16 @@ export default {
           title: 'Login',
           to: '/login',
         },
+        {
+          icon: 'mdi-chart-bubble',
+          title: 'Friends',
+          to: '/friends',
+        },
+        {
+          icon: 'mdi-chart-bubble',
+          title: 'Relatives',
+          to: '/relatives',
+        },
       ],
       miniVariant: false,
       right: true,
