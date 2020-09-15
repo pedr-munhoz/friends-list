@@ -34,6 +34,8 @@
 
 <script>
 export default {
+  layout: 'base',
+
   data: () => ({
     user: {
       email: '',
@@ -42,8 +44,16 @@ export default {
   }),
 
   methods: {
-    login() {
-      this.$store.dispatch('login', this.user)
+    async login() {
+      const authorized = await this.$store.dispatch('login', this.user)
+      console.log(authorized)
+      if (!authorized) this.setAlerts()
+      else {
+        this.$router.push('/friends').catch(() => {})
+      }
+    },
+    setAlerts() {
+      console.log('alerts')
     },
   },
 }

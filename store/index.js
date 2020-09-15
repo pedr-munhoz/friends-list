@@ -16,7 +16,7 @@ export const actions = {
 
   fetchFriends({ state, commit, rootState }) {
     apiService
-      .get('url')
+      .get('api/friends')
       .then((response) => {
         commit('friends/SET_LIST', response)
       })
@@ -31,7 +31,7 @@ export const actions = {
 
   fetchRelatives({ state, commit, rootState }) {
     apiService
-      .get('url')
+      .get('api/relatives')
       .then((response) => {
         commit('relatives/SET_LIST', response)
       })

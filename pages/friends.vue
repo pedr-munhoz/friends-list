@@ -23,6 +23,7 @@ export default {
   },
 
   data: () => ({}),
+
   computed: {
     friends() {
       return this.$store.getters['friends/get']
