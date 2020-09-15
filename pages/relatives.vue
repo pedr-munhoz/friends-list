@@ -21,10 +21,15 @@ export default {
   components: {
     PeopleList,
   },
+
   computed: {
     relatives() {
       return this.$store.getters['relatives/get']
     },
+  },
+
+  created() {
+    this.$store.dispatch('fetchRelatives')
   },
 }
 </script>

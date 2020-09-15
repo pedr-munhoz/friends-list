@@ -21,11 +21,16 @@ export default {
   components: {
     PeopleList,
   },
+
   data: () => ({}),
   computed: {
     friends() {
       return this.$store.getters['friends/get']
     },
+  },
+
+  created() {
+    this.$store.dispatch('fetchFriends')
   },
 }
 </script>
