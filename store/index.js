@@ -27,6 +27,7 @@ export const actions = {
         commit('friends/SET_LIST', response)
       })
       .catch((error) => {
+        // eslint-disable-next-line no-console
         console.log(error)
         commit('friends/SET_LIST', [
           { id: '1', name: 'May', phone: '## #####-####', reference: 'work' },
@@ -42,6 +43,7 @@ export const actions = {
         commit('relatives/SET_LIST', response)
       })
       .catch((error) => {
+        // eslint-disable-next-line no-console
         console.log(error)
         commit('relatives/SET_LIST', [
           { id: '1', name: 'Mary', phone: '## #####-####', reference: 'mom' },

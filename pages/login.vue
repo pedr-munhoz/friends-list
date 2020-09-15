@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 <template>
   <v-layout class="mt-5">
     <v-flex>
@@ -46,15 +47,14 @@ export default {
   methods: {
     async login() {
       const authorized = await this.$store.dispatch('login', this.user)
+      // eslint-disable-next-line no-console
       console.log(authorized)
       if (!authorized) this.setAlerts()
       else {
         this.$router.push('/friends')
       }
     },
-    setAlerts() {
-      console.log('alerts')
-    },
+    setAlerts() {},
   },
 }
 </script>
