@@ -57,6 +57,10 @@ export default {
     error: false,
   }),
 
+  mounted() {
+    this.$store.dispatch('logout')
+  },
+
   methods: {
     async login() {
       const authorized = await this.$store.dispatch('login', this.user)
