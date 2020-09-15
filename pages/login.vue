@@ -12,11 +12,18 @@
                 Welcome! Please enter your email and password.
               </v-card-subtitle>
               <v-card-text>
-                <v-text-field v-model="user.email" label="Email" />
+                <v-text-field
+                  v-model="user.email"
+                  prepend-icon="mdi-account"
+                  label="Email"
+                />
                 <v-text-field
                   v-model="user.password"
-                  type="password"
+                  :type="showPassword ? 'password' : 'text'"
+                  prepend-icon="mdi-lock"
+                  :append-icon="!showPassword ? 'mdi-eye' : 'mdi-eye-off'"
                   label="Password"
+                  @click:append="showPassword = !showPassword"
                 />
               </v-card-text>
               <v-card-actions>
@@ -42,6 +49,7 @@ export default {
       email: '',
       password: '',
     },
+    showPassword: false,
   }),
 
   methods: {
