@@ -5,7 +5,9 @@ const ApiService = {
     axios.defaults.baseURL = baseURL
   },
 
-  setHeader() {},
+  setHeader(token) {
+    axios.defaults.headers.common.Authorization = `Bearer ${token}`
+  },
 
   removeHeader() {
     axios.defaults.headers.common = {}

@@ -20,6 +20,7 @@ export default {
       required: true,
     },
   },
+
   data: () => ({
     headers: [
       { text: 'Name', value: 'name' },

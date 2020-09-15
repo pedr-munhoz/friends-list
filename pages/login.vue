@@ -11,12 +11,16 @@
                 Welcome! Please enter your email and password.
               </v-card-subtitle>
               <v-card-text>
-                <v-text-field label="Email" />
-                <v-text-field type="password" label="Password" />
+                <v-text-field v-model="user.email" label="Email" />
+                <v-text-field
+                  v-model="user.password"
+                  type="password"
+                  label="Password"
+                />
               </v-card-text>
               <v-card-actions>
                 <v-spacer />
-                <v-btn>Sign in</v-btn>
+                <v-btn @click="login()">Sign in</v-btn>
                 <v-spacer />
               </v-card-actions>
             </v-card>
@@ -27,3 +31,20 @@
     </v-flex>
   </v-layout>
 </template>
+
+<script>
+export default {
+  data: () => ({
+    user: {
+      email: '',
+      password: '',
+    },
+  }),
+
+  methods: {
+    login() {
+      this.$store.dispatch('login', this.user)
+    },
+  },
+}
+</script>
