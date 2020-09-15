@@ -15,14 +15,18 @@
                 <v-text-field
                   v-model="user.email"
                   prepend-icon="mdi-account"
+                  :error="error"
                   label="Email"
+                  @input="error = false"
                 />
                 <v-text-field
                   v-model="user.password"
                   :type="showPassword ? 'password' : 'text'"
                   prepend-icon="mdi-lock"
                   :append-icon="!showPassword ? 'mdi-eye' : 'mdi-eye-off'"
+                  :error="error"
                   label="Password"
+                  @input="error = false"
                   @click:append="showPassword = !showPassword"
                 />
               </v-card-text>
@@ -50,6 +54,7 @@ export default {
       password: '',
     },
     showPassword: false,
+    error: false,
   }),
 
   methods: {
@@ -61,7 +66,9 @@ export default {
       else {
       }
     },
-    setAlerts() {},
+    setAlerts() {
+      this.error = true
+    },
   },
 }
 </script>
