@@ -1,9 +1,12 @@
 export const state = () => ({
-  list: [
-    { id: '1', name: 'Mary', phone: '## #####-####', reference: 'mom' },
-    { id: '2', name: 'Matt', phone: '## #####-####', reference: 'dad' },
-  ],
+  list: [],
 })
+
+export const mutations = {
+  SET_LIST(state, value) {
+    state.list = value
+  },
+}
 
 export const getters = {
   get(state) {
