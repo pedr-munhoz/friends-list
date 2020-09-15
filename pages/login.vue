@@ -49,7 +49,7 @@ export default {
       console.log(authorized)
       if (!authorized) this.setAlerts()
       else {
-        this.$router.push('/friends').catch(() => {})
+        this.$router.push('/friends')
       }
     },
     setAlerts() {

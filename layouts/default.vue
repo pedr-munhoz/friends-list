@@ -22,6 +22,7 @@
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
       <v-toolbar-title v-text="title" />
       <v-spacer />
+      <v-btn outlined @click="logout()">Sign out</v-btn>
     </v-app-bar>
     <v-main>
       <v-container>
@@ -52,5 +53,12 @@ export default {
     ],
     title: 'Vuetify.js',
   }),
+
+  methods: {
+    async logout() {
+      await this.$store.dispatch('logout')
+      this.$router.push('/login')
+    },
+  },
 }
 </script>

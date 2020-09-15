@@ -14,6 +14,12 @@ export const actions = {
     return false
   },
 
+  logout({ state, commit, rootState }) {
+    commit('user/SET_EMAIL', '')
+    commit('user/SET_TOKEN', '')
+    apiService.removeHeader()
+  },
+
   fetchFriends({ state, commit, rootState }) {
     apiService
       .get('api/friends')
