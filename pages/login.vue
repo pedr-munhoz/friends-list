@@ -51,7 +51,6 @@ export default {
       console.log(authorized)
       if (!authorized) this.setAlerts()
       else {
-        this.$router.push('/friends')
       }
     },
     setAlerts() {},

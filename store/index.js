@@ -9,6 +9,7 @@ export const actions = {
       commit('user/SET_EMAIL', user.email)
       commit('user/SET_TOKEN', token)
       apiService.setHeader(token)
+      this.$router.push('/friends')
       return true
     }
     return false
@@ -18,6 +19,7 @@ export const actions = {
     commit('user/SET_EMAIL', '')
     commit('user/SET_TOKEN', '')
     apiService.removeHeader()
+    this.$router.push('/login')
   },
 
   fetchFriends({ state, commit, rootState }) {
